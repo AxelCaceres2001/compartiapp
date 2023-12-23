@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPARTIAPP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="panel container">
+        <h1 class="title">COMPARTIAPP</h1>
+
+        <div class="content__form">
+            <form id="form-person" class="form" onsubmit="addPerson()">
+                <input type="text" class="form__input" name="name-person" placeholder="Ingrese nombre" required>
+                <button type="submit" class="form__btn">INGRESAR PERSONA</button>
+            </form>
+        </div>
+
+        <div class="content__form">
+            <form id="form-expense" class="form" onsubmit="addExpense()">
+                <input type="text" class="form__input" name="name-expense" placeholder="Ingrese nombre del gasto " required>
+                <input type="text" class="form__input" name="amount" placeholder="Ingrese monto" required>
+                <select name="person" id="select-person" class="form__input">
+                    <option value="none" selected>Selecciona una persona</option>
+                </select>
+                <select name="badge" id="select-badge" class="form__input">
+                    <option value="AR$$" selected>AR$$</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+                <button type="submit" class="form__btn form__btn---expense">INGRESAR GASTO</button>
+            </form>
+        </div>
+
+        <h2 class="subtitle subtitle---active">PERSONAS</h2>
+
+        <div class="content__table">
+            <table class="table">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Accciones</th>
+                </thead>
+                <tbody id="table-body-person">
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="subtitle subtitle---active">GASTOS</h2>
+
+        <div class="content__table">
+            <table class="table">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Monto</th>
+                    <th>Pago</th>
+                    <th>Moneda</th>
+                    <th>Accciones</th>
+                </thead>
+                <tbody id="table-body-expense">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content__btn">
+            <button class="btn" onclick="generateSummary()">GENERAR RESUMEN</button>
+        </div>
+
+        <h2 class="subtitle">RESUMEN</h2>
+
+        <div class="content__summary">
+            <h3>Total: </h3>
+            <h3>Se divide entre: </h3>
+            <h3>Detalles:</h3>
+            <table class="table">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Gasto</th>
+                    <th>Diferencia</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Axel</td>
+                        <td>6500</td>
+                        <td>-3834</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
